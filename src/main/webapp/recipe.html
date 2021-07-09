@@ -4,15 +4,23 @@
         <meta charset="UTF-8" />
         <title>My Recipes</title>
         <link rel="stylesheet" href="style.css" />
-        <script src="FetchRecipe.js"></script>
+        <script src="fetch_recipe.js"></script>
     </head>
     <body style="color: aliceblue;">
+        <nav class="nav">
+            <span class="menu"><a href="index.html" class="menunav">Home</a></span>
+            <span class="menu"><a href="create_recipe.html" class="menunav">Create</a></span>
+            <span class="menu"><a href="breakfast_page.html" class="menunav">Breakfast</a></span>
+            <span class="menu"><a href="lunch_page.html" class="menunav">Lunch</a></span>
+            <span class="menu"><a href="dinner_page.html" class="menunav">Dinner</a></span>
+            <span class="menu"><a href="recipe.html" class="menunav">Random recipes</a></span>
+        </nav>
         <div id="content">
-            <div style="position: relative; left: 50px; top: 50px; background-color: black;">
-            <h1 style="padding: 20px; margin-top: 50px; color: aliceblue;">My Recipes!</h1>
-            <button onclick="addRandomRecipe()">Recipes</button>
-            <div id="recipe-container"></div>
-             </div>
+            <div style="position: relative; left: 0px; top: 80px; background-color: #0c4a60;">
+                <h1 style="padding: 20px; margin-top: 30px; color: aliceblue;">My Recipes!</h1>
+                <button onclick="addRandomRecipe()">Recipes</button>
+                <div id="recipe-container"></div>
+            </div>
         </div>
     </body>
 </html>

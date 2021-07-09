@@ -2,12 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>SPS Team 35</title>
+        <title>Create Recipe</title>
         <link rel="stylesheet" href="style.css" />
-        <script src="script.js"></script>
         <script src="fetch_recipe.js"></script>
     </head>
-    <body>
+    <body style="color: aliceblue;">
         <nav class="nav">
             <span class="menu"><a href="index.html" class="menunav">Home</a></span>
             <span class="menu"><a href="create_recipe.html" class="menunav">Create</a></span>
@@ -17,7 +16,14 @@
             <span class="menu"><a href="recipe.html" class="menunav">Random recipes</a></span>
         </nav>
         <div id="content">
-            <h1 style="padding: 20px; margin-top: 80px; text-align: center; font-size: 50px; color: #333d51;">Top Recipes!</h1>
+            <form action="/form-handler" method="POST">
+                <h1 style="padding: 20px; margin-top: 50px; color: #0c4a60; text-align: left;">Enter your recipe:</h1>
+                <textarea name="title">Enter title</textarea>
+                <textarea name="link">Enter link</textarea>
+                <textarea name="category">Enter category</textarea>
+                <br />
+                <input type="submit" />
+            </form>
         </div>
     </body>
 </html>
