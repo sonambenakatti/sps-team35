@@ -13,10 +13,9 @@ import javax.servlet.http.HttpServletResponse;
 import org.jsoup.Jsoup;
 import org.jsoup.safety.Whitelist;
 
-/** Placeholder code.
-    TODO: Replace with new implementation. */
-@WebServlet("/placeholder")
-public class PlaceholderServlet extends HttpServlet {
+/* Servlet responsible for creating new recipes. */
+@WebServlet("/new-recipe")
+public class NewRecipeServlet extends HttpServlet {
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -25,14 +24,16 @@ public class PlaceholderServlet extends HttpServlet {
     long timestamp = System.currentTimeMillis();
 
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
-    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Task");
-    FullEntity taskEntity =
+    KeyFactory keyFactory = datastore.newKeyFactory().setKind("Recipe");
+    FullEntity recipeEntity =
         Entity.newBuilder(keyFactory.newKey())
             .set("title", title)
-            .set("timestamp", timestamp)
+            .set("link", link)
+            .set("likes", likes)
+            .set("category", category)
             .build();
-    datastore.put(taskEntity);
+    datastore.put(recipeEntity);
 
-    response.sendRedirect("/index.html");
+    response.sendRedirect("/create_recipe.html");
   }
 }
