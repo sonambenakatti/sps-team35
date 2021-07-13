@@ -9,7 +9,7 @@ public final class Recipe {
   private final int likes;
   private final String category;
 
-  public Task(int id, String title, String link, int likes, String category) {
+  public Recipe(int id, String title, String link, int likes, String category) {
     this.id = id;
     this.title = title;
     this.link = link;
