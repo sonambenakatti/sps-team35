@@ -30,14 +30,12 @@ const jsonrecipes = [
     category: 'dinner'
     }
 ]
-function addRandomRecipe() {
 
-  // Pick a random recipe.
-  const jsonrecipe = jsonrecipes[Math.floor(Math.random() * jsonrecipes.length)];
-  const recipe = '\n \n Link: '+ jsonrecipe.link +
-                 '\n \n Title: Peanut Butter Popcorn ' + jsonrecipe.title +
-                 ' \n \n Likes: '+ jsonrecipe.likes +'\n \n Category: '+ jsonrecipe.category;
+window.onload = function showRecipes(){
+  const recipe = jsonrecipes[Math.floor(Math.random() * jsonrecipes.length)].link;
+  //const queryString = window.location.search;
+
   // Add it to the page.
-  const recipeContainer = document.getElementById('recipe-container');
+  const recipeContainer = document.getElementById('category-container');
   recipeContainer.innerText = recipe;
 }
