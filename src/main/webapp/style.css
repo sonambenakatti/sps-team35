@@ -1,0 +1,51 @@
+.nav {
+    position: relative;
+    background-color: silver;
+    height: auto;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+.nav .menu {
+    margin-left: auto;
+    margin-right: auto;
+    height: auto;
+    width: auto;
+    padding-left: 1%;
+    padding-right: 1%;
+    text-align: center;
+    font-size: 130%;
+}
+a.menunav:link,a.menunav:active,a.menunav:visited {
+    color:#fff;
+    text-decoration: none;
+}
+a.menunav:hover {
+    color: skyblue;
+    text-decoration: none;
+}
+.nav {
+    overflow: hidden;
+    background-color: #4C4556 ;
+    position: fixed;
+    top: 0; 
+    width: 100%; 
+}
+.nav a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+.nav a:hover {
+    background: #ddd;
+    color: black;
+}
+a {
+    background-color: gray;
+    color: #000000;
+}
+body {
+    background-color:  #A0D3F9 ;
+}
