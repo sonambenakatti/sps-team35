@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <title>My Recipes</title>
         <link rel="stylesheet" href="style.css" />
-        <script src="fetch_recipe.js"></script>
+        <script src="fetch_random_recipe.js"></script>
     </head>
     <body style="color: #333d51;">
        <nav class="nav">
@@ -17,7 +17,8 @@
         </nav>
         <div id="content">
             <div style="position: relative; left: 40px; top: 80px; background-color: #A0D3F9">
-                <h1 style="padding: 20px; margin-top: 30px; color: #333d51;" id="recipe-title"></h1>
+                <h1 style="padding: 20px; margin-top: 30px; color: #333d51;">My Recipes!</h1>
+                <button onclick="addRandomRecipe()">Recipes</button>
                 <div id="recipe-container"></div>
             </div>
         </div>
