@@ -39,28 +39,42 @@ const jsonrecipes = [
  * Finds every recipe in the list of jsonrecipes which contains the given category. 
  * 
  * @param {string} cat the category to find
+ * @returns {array} a list of recipes in the given category
  */
 function search(cat) {
-  let recipes = "";
+  let recipes = [];
   for (let i = 0; i < jsonrecipes.length; i++) {
     if (jsonrecipes[i].category == cat) {
-      recipes = recipes + jsonrecipes[i].title + "\n\n"
+      recipes.push(jsonrecipes[i]);
     }
   }
-  return recipes
+  return recipes;
 }
 
 window.onload = function showRecipes(){
-  const recipe = jsonrecipes[Math.floor(Math.random() * jsonrecipes.length)].link;
+  
   const queryString = window.location.search;
   const urlParams = new URLSearchParams(queryString);
   const categ = urlParams.get('category');
   this.console.log(categ);
-  recipes = search(categ);
+  let recipes = search(categ);
   this.console.log(recipes);
   // Add it to the page.
-  const categoryContainer = document.getElementById('category-container');
+  // const categoryContainer = document.getElementById('category-container');
+  const categoryList = document.getElementById('category_list');
   const headerContainer = document.getElementById('category-header');
+  for (let i = 0; i < recipes.length; i++){
+    let linode = this.document.createElement('li');
+    let anchor = this.document.createElement('a');
+    let title = document.createTextNode(recipes[i].title);
+    anchor.appendChild(title);
+    anchor.title = recipes[i].title;
+    anchor.href = "/recipe.html?title=" + recipes[i].title;
+    linode.appendChild(anchor);
+    categoryList.appendChild(linode);
+
+  }
+  
+    
   headerContainer.innerText = categ.substring(0,1).toUpperCase() + categ.substring(1,categ.length);
-  categoryContainer.innerText = recipes;
 }
