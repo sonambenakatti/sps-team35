@@ -28,16 +28,17 @@ public class ListRecipesServlet extends HttpServlet {
     QueryResults<Entity> results = datastore.run(query);
 
     List<Recipe> recipes = new ArrayList<>();
+    
     while (results.hasNext()) {
       Entity entity = results.next();
 
       long id = entity.getKey().getId();
       String title = entity.getString("title");
       String link = entity.getString("link");
-      int likes = entity.getInt("likes");
+      //int likes = entity.getList("likes");
       String category = entity.getString("category");
 
-      Recipe recipe = new Recipe(id, title, link, likes, category);
+      Recipe recipe = new Recipe(id, title, link, category);
       recipes.add(recipe);
     }
 
