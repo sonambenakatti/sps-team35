@@ -21,6 +21,8 @@ public class NewRecipeServlet extends HttpServlet {
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
     // Sanitize user input to remove HTML tags and JavaScript.
     String title = Jsoup.clean(request.getParameter("title"), Whitelist.none());
+    String link = Jsoup.clean(request.getParameter("link"), Whitelist.none());
+    String category = Jsoup.clean(request.getParameter("category"), Whitelist.none());
     long timestamp = System.currentTimeMillis();
 
     Datastore datastore = DatastoreOptions.getDefaultInstance().getService();
@@ -29,7 +31,7 @@ public class NewRecipeServlet extends HttpServlet {
         Entity.newBuilder(keyFactory.newKey())
             .set("title", title)
             .set("link", link)
-            .set("likes", likes)
+            //.set("likes", likes)
             .set("category", category)
             .build();
     datastore.put(recipeEntity);
