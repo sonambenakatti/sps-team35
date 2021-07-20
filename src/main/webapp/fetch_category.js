@@ -42,9 +42,12 @@ const jsonrecipes = [
  */
 function search(cat) {
   let recipes = "";
+  let count = "1";
   for (let i = 0; i < jsonrecipes.length; i++) {
     if (jsonrecipes[i].category == cat) {
-      recipes = recipes + jsonrecipes[i].title + "\n\n"
+      recipes = recipes + "Recipe "+count+")\n Title ->"+jsonrecipes[i].title + "\n\n"
+      recipes = recipes + "Link ->" +jsonrecipes [i].link+ "\n\n\n\n"
+      count++;
     }
   }
   return recipes
